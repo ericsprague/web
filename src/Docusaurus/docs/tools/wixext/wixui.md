@@ -239,8 +239,8 @@ In general, you'll need to duplicate the original WiX authoring for the dialog s
 
 For example, to remove LicenseAgreementDlg from the WixUI_InstallDir dialog set:
 
-1. Copy WixUI_InstallDir.wxs in the WiX source code to your project.
-1. Rename the `UI` element `Id`s. For example:
+1. Copy the entire WixUI_InstallDir.wxs file from the WiX4 source code into your project.  (You may wish to rename it, e.g. as WixUI_InstallDir_NoLicense.wxs, to make clear that it is a modified variant of the original.)
+1. In the local .wxs file within your project, rename the `UI` element `Id`s and CustomAction `Id`s, and update all references to these `Id`s. For example:
     ```xml
     <UI Id="InstallDir_NoLicense_$(WIXUIARCH)">
     ...
